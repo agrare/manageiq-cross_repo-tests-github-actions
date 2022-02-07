@@ -4,7 +4,53 @@ on: [push, pull_request]
 
 jobs:
   manageiq:
-    uses: agrare/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@github_actions
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
     with:
-      test_repo: ManageIQ/manageiq@master
-      repos: ManageIQ/manageiq@master
+      test-repo: ManageIQ/manageiq#21680
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+  manageiq-providers-amazon:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-providers-amazon@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+  manageiq-ui-classic_spec:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec
+  manageiq-ui-classic_spec-compile:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec:compile
+  manageiq-ui-classic_spec-debride:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec:debride
+  manageiq-ui-classic_spec-javascript:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec:javascript
+  manageiq-ui-classic_spec-jest:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec:jest
+  manageiq-ui-classic_spec-routes:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-classic@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
+      test-suite: spec:routes
+  manageiq-ui-service:
+    uses: ManageIQ/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@master
+    with:
+      test-repo: ManageIQ/manageiq-ui-service@master
+      repos: ManageIQ/inventory_refresh#101,ManageIQ/manageiq#21680
