@@ -1,5 +1,10 @@
 name: Cross Repo Tests
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
+  manageiq:
+    uses: agrare/manageiq-cross_repo-tests-github-actions/.github/workflows/manageiq_cross_repo.yml@master
+    with:
+      test_repo: ManageIQ/manageiq@master
+      repos: ManageIQ/manageiq@master
