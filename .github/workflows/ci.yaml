@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   manageiq:
-    uses: agrare/manageiq-cross_repo-tests-github-actions/.github/workflows/manageiq_cross_repo.yml@master
+    uses: agrare/manageiq-cross_repo/.github/workflows/manageiq_cross_repo.yaml@github_actions
     with:
       test_repo: ManageIQ/manageiq@master
       repos: ManageIQ/manageiq@master
